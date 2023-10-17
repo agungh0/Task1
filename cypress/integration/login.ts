@@ -1,10 +1,12 @@
 import {LoginPage} from "./pages/login_pages"
 import {DashboardPage} from "./pages/dashboard_pages"
 import {BikeLightPage} from "./pages/bike_light_page"
+import { OpenSideBar } from "./pages/opensidebar"
 
 let loginPage = new LoginPage()
 let dashboardPage = new DashboardPage()
 let bikelightPage = new BikeLightPage()
+let openSideBar = new OpenSideBar()
 const URL = 'https://www.saucedemo.com/'
 
 it('Test LOGIN', () => {
@@ -27,4 +29,10 @@ it('Test Sauce Demo Sauce labs product bike light', () => {
     loginPage.login(URL,'standard_user','secret_sauce')
     loginPage.assertLogin()
     bikelightPage.sauceLabsBikeLight()
+})
+
+it('Open Side Bar', () => {
+    loginPage.login(URL,'standard_user','secret_sauce')
+    loginPage.assertLogin()
+    openSideBar.openSideBar()
 })
